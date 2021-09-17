@@ -1,0 +1,3 @@
+include ':guard'
+include ':guard-sample'
+rootProject.name = "Guard-Support"

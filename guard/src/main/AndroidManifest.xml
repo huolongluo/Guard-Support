@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tqxd.guard.support">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <application>
+        <activity
+            android:name=".pix.OnePixActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:theme="@style/OnePixTheme" />
+
+        <service
+            android:name=".service.GuardJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service android:name=".service.HideForegroundService" />
+        <service
+            android:name=".service.LocalService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".service.RemoteService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":guardRemoteService" />
+    </application>
+
+</manifest>
